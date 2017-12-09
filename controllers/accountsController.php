@@ -66,14 +66,17 @@ class accountsController extends http\controller
             //you may want to send the person to a
             // login page or create a session and log them in
             // and then send them to the task list page and a link to create tasks
-            header("Location: index.php?page=accounts&action=all");
+            header("Location: index.php?page=homepage");
 
         } else {
             //You can make a template for errors called error.php
             // and load the template here with the error you want to show.
            // echo 'already registered';
-            $error = 'already registered';
-            self::getTemplate('error', $error);
+
+            
+            $existinguser='<h1>Already registered </h1></br>'.'Click <a href= "index.php?page=homepage">here </a> to sign-in';
+            self::getTemplate('existinguser', $existinguser);
+
 
         }
 
@@ -131,6 +134,9 @@ class accountsController extends http\controller
 
                 session_start();
                 $_SESSION["userID"] = $user->id;
+
+
+                  header("Location: index.php?page=accounts&action=all");
 
                 //forward the user to the show all todos page
                 print_r($_SESSION);

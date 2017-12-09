@@ -28,6 +28,8 @@ print utility\htmlTable::genarateTableFromMultiArray($data);
 
 ?>
 
+<p><a href="https://web.njit.edu/~mda9/finalproject/index.php">Homepage</a></p>
+
 
 <script src="js/scripts.js"></script>
 </body>

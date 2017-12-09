@@ -26,8 +26,8 @@ class processRequest
         $controller_method = $requested_route->method;
 
         //these echo helps figure out the controller name and method
-        // echo $controller_name . '</br>';
-        // echo $controller_method . '</br>';
+        //echo $controller_name . '</br>';
+       // echo $controller_method . '</br>';
 
 
         //I use a static for the controller because it doesn't have any properties
@@ -61,11 +61,14 @@ class processRequest
                 break;
             }
         }
+
+
         if (is_null($foundRoute)) {
             controller::getTemplate('notfound');
             exit;
         } else {
             return $foundRoute;
+
         }
     }
 }
