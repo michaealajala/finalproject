@@ -73,7 +73,7 @@ class tasksController extends http\controller
     }
 
     public static function show_add(){
-        print_r("in here00");
+        
         session_start();
         $id=$_SESSION['userID'];
         self::getTemplate('show_add', $id);
