@@ -17,11 +17,16 @@
 
 <body>
 
-<?php
-//this is how you print something  $data contains the record that was selected on the table.
+<form action="index.php?page=tasks&action=store&id=<?php echo $data->id; ?>" method="post">
 
-print_r($data);
-?>
+    Title: <input type="text" name="message" value="<?php echo $data->message; ?>"><br>
+    Complete: <input type="text" name="isdone" value="<?php echo $data->isdone; ?>"><br>
+    Create Date: <input type="text" name="createddate" value="<?php echo $data->createddate; ?>"><br>
+    Last Updated: <input type="text" name="duedate" value="<?php echo $data->duedate; ?>"><br>
+
+    <input type="submit" value="Submit form">
+</form>
+
 <form action="index.php?page=tasks&action=delete&id=<?php echo $data->id; ?> " method="post" id="form1">
     <button type="submit" form="form1" value="delete">Delete</button>
 </form>

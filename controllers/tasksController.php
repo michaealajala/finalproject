@@ -22,8 +22,8 @@ class tasksController extends http\controller
 
     public static function all()
     {
-        $records = todos::findAll();
-        /*session_start();
+        //$records = todos::findAll();
+        session_start();
            if(key_exists('userID',$_SESSION)) {
                $userID = $_SESSION['userID'];
            } else {
@@ -33,7 +33,7 @@ class tasksController extends http\controller
         $userID = $_SESSION['userID'];
 
         $records = todos::findTasksbyID($userID);
-        */
+        
         self::getTemplate('all_tasks', $records);
 
     }
@@ -59,22 +59,36 @@ class tasksController extends http\controller
     //this would be for the post for sending the task edit form
     public static function store()
     {
+        $todo = todos::findOne($_REQUEST['id']);
+        $todo->message = $_POST['message'];
+        $todo->isdone = $_POST['isdone'];
+        $todo->createddate = $_POST['createddate'];
+        $todo->duedate = $_POST['duedate'];
+
+        $todo->save();
+        header("Location: index.php?page=tasks&action=all");
 
 
-        $record = todos::findOne($_REQUEST['id']);
-        $record->body = $_REQUEST['body'];
-        $record->save();
-        print_r($_POST);
+    }
 
+    public static function show_add(){
+        print_r("in here00");
+        session_start();
+        $id=$_SESSION['userID'];
+        self::getTemplate('show_add', $id);
     }
 
     public static function save() {
         session_start();
-        $task = new todo();
+        $todo = new todo();
 
-        $task->body = $_POST['body'];
-        $task->ownerid = $_SESSION['userID'];
-        $task->save();
+        $todo->message = $_POST['message'];
+        $todo->isdone = $_POST['isdone'];
+        $todo->createddate = $_POST['createddate'];
+        $todo->duedate = $_POST['duedate'];
+        $todo->ownerid = $_SESSION['userID'];
+
+        $todo->save();
 
     }
 

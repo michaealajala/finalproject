@@ -111,6 +111,12 @@ class accountsController extends http\controller
         header("Location: index.php?page=accounts&action=all");
     }
 
+    public static function redirect (){
+        
+        header("Location: index.php?page=accounts&action=all");
+
+    }
+
     //this is to login, here is where you find the account and allow login or deny.
     public static function login()
     {
@@ -122,6 +128,7 @@ class accountsController extends http\controller
         //        $record = accounts::findUser($_POST['email']);
 
         $user = accounts::findUserbyEmail($_REQUEST['email']);
+        print_r($user);
 
 
         if ($user == FALSE) {
@@ -136,7 +143,7 @@ class accountsController extends http\controller
                 $_SESSION["userID"] = $user->id;
 
 
-                  header("Location: index.php?page=accounts&action=all");
+                  header("Location: index.php?page=tasks&action=all");
 
                 //forward the user to the show all todos page
                 print_r($_SESSION);
@@ -150,5 +157,14 @@ class accountsController extends http\controller
 
 
     }
+
+        public static function logout()
+        {
+
+
+        }
+
+
+
 
 }

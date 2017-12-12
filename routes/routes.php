@@ -52,17 +52,21 @@ class routes
         $route->method = 'show';
         $routes[] = $route;
 
+
+
         //This is an examole of the post for tasks to list tasks.  See the action matches the method name.
         //you need to add routes for create, edit, and delete
         //GET METHOD index.php?page=tasks&action=all
 
-        $route = new route();
+       /* $route = new route();
         $route->http_method = 'GET';
         $route->action = 'all';
         $route->page = 'tasks';
         $route->controller = 'tasksController';
         $route->method = 'all';
         $routes[] = $route;
+
+        */
         //GET METHOD index.php?page=accounts&action=all
 //https://web.njit.edu/~kwilliam/mvc/index.php?page=accounts&action=all
 
@@ -87,6 +91,55 @@ class routes
         //GET METHOD index.php?page=accounts&action=login
 
 
+/*
+*
+*  todo GET routes
+*  
+*/
+
+       //GET METHOD index.php?page=tasks&action=all
+        $route = new route();
+        $route->http_method = 'GET';
+        $route->action = 'all';
+        $route->page = 'tasks';
+        $route->controller = 'tasksController';
+        $route->method = 'all';
+        $routes[] = $route;
+
+        $route = new route();
+        $route->http_method = 'POST';
+        $route->action = 'store';
+        $route->page = 'tasks';
+        $route->controller = 'tasksController';
+        $route->method = 'store';
+        $routes[] = $route;
+
+
+        $route = new route();
+        $route->http_method = 'GET';
+        $route->action = 'show_add';
+        $route->page = 'tasks';
+        $route->controller = 'tasksController';
+        $route->method = 'show_add';
+        $routes[] = $route;
+
+
+        $route = new route();
+        $route->http_method = 'POST';
+        $route->action = 'save';
+        $route->page = 'tasks';
+        $route->controller = 'tasksController';
+        $route->method = 'save';
+        $routes[] = $route;
+
+
+
+
+
+
+
+
+
         $route = new route();
         $route->http_method = 'POST';
         $route->action = 'login';
@@ -94,6 +147,15 @@ class routes
         $route->controller = 'accountsController';
         $route->method = 'login';
         $routes[] = $route;
+
+
+        $route= new route();
+        $route->http_method = 'POST';
+        $route->action='logout';
+        $route->page ='accounts';
+        $route->controller='accountsController';
+        $route->method= 'logout';
+        $routes [] =$route;
 
         //YOU WILL NEED TO ADD MORE ROUTES
 
@@ -145,6 +207,9 @@ class routes
         $route->controller = 'accountsController';
         $route->method = 'store';
         $routes[] = $route;
+
+
+
 
 
         return $routes;

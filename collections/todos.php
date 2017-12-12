@@ -22,6 +22,19 @@ class todos extends database\collection
             return $recordsSet;
         }
     }
+
+    public static function findOne($id){
+
+        $tableName = get_called_class();
+        $sql = 'SELECT * FROM ' . $tableName . ' WHERE id = ?';
+        $recordsSet = self::getResults($sql, $id);
+
+          if (is_null($recordsSet)) {
+            return FALSE;
+        } else {
+            return $recordsSet[0];
+        }
+    }
 }
 
 ?>

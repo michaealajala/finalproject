@@ -17,6 +17,15 @@
 
 <body>
 
+<!-- <form action="index.php?page=tasks&action=show_add" method="post" id="add">
+    <button type="submit" form="form1" value="create">Add New</button>
+</form> -->
+
+<!-- <button type="submit" formaction="index.php?page=tasks&action=all">Add</button>
+ -->
+<a href="index.php?page=tasks&action=show_add">Add New</a>
+
+
 <?php
 //this is how you print something
 

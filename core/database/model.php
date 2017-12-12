@@ -57,6 +57,7 @@ abstract class model
         $columnString = implode(',', array_flip($array));
         $valueString = ':' . implode(',:', array_flip($array));
         $sql = 'INSERT INTO ' . $tableName . ' (' . $columnString . ') VALUES (' . $valueString . ')';
+        print_r($sql);
         return $sql;
     }
 
