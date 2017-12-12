@@ -59,6 +59,7 @@ class tasksController extends http\controller
     //this would be for the post for sending the task edit form
     public static function store()
     {
+        session_start();
         $todo = new todo();
         $todo->owneremail = $_SESSION["userEmail"];
         $todo->ownerid = $_SESSION["userID"];
@@ -67,7 +68,7 @@ class tasksController extends http\controller
         $todo->message = $_POST['message'];
         $todo->isdone = $_POST['isdone'];
         $todo->save();
-        header("Location: index.php?page=tasks&action=all");
+        header("Location: index.php?page=tasks&action=all&id=".$_SESSION["userID"]);
 
 
     }
