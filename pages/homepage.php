@@ -13,6 +13,9 @@
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
     <![endif]-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -31,23 +34,34 @@
 
     else{
 
-      echo ' <h1>Welcome</h1>
-              <p>Sign in </p>
+      echo ' 
+              
+ <div class="container">
+ <center>
+ <h3 class="col-sm-offset-"><i>Task Management</i><br></h3>
+              
+
  <form action="index.php?page=accounts&action=login" method="POST">
 
     <div class="container">
+    <div class="input-group">
         <label><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="email" required><br/>
+        <input type="text" placeholder="Enter Username" class="form-control" name="email" required><br/>
 
         <label><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="password" required><br/>
+        <input type="password" placeholder="Enter Password" class="form-control" name="password" required><br/>
 
-        <button type="submit">Login</button>
+        <button type="submit" class="form-control">Login</button>
+    <div class="input-group">
     </div>
+<center>
 
 
 </form>
-<p>New to this page <a href="index.php?page=accounts&action=register">Create an account</a></p>';
+<p>New to this page <a href="index.php?page=accounts&action=register">Create an account</a></p>
+
+</div>
+';
 
     }
 

@@ -26,7 +26,7 @@
 
             Title: <input type="text" class="form-control" name="message" value="enter task message"><br>
             Complete: <input type="text" class="form-control" name="isdone" value="complete?"><br>
-            Email: <input type="text" class="form-control" name="owneremail" value="create date"><br>
+            Email: <input type="text" class="form-control" name="owneremail" value="owner email"><br>
             Last Updated: <input type="text" class="form-control" name="duedate" value="due date"><br>
 
             <input type="submit" value="Submit form">
