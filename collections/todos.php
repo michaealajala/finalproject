@@ -19,6 +19,10 @@ class todos extends database\collection
         if (is_null($recordsSet)) {
             return FALSE;
         } else {
+
+            foreach ($recordsSet as $record){
+                unset($record->ownerid);
+            }
             return $recordsSet;
         }
     }
@@ -32,6 +36,8 @@ class todos extends database\collection
           if (is_null($recordsSet)) {
             return FALSE;
         } else {
+
+
             return $recordsSet[0];
         }
     }

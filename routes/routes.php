@@ -58,15 +58,7 @@ class routes
         //you need to add routes for create, edit, and delete
         //GET METHOD index.php?page=tasks&action=all
 
-       /* $route = new route();
-        $route->http_method = 'GET';
-        $route->action = 'all';
-        $route->page = 'tasks';
-        $route->controller = 'tasksController';
-        $route->method = 'all';
-        $routes[] = $route;
 
-        */
         //GET METHOD index.php?page=accounts&action=all
 //https://web.njit.edu/~kwilliam/mvc/index.php?page=accounts&action=all
 
@@ -117,19 +109,19 @@ class routes
 
         $route = new route();
         $route->http_method = 'GET';
-        $route->action = 'show_add';
+        $route->action = 'create';
         $route->page = 'tasks';
         $route->controller = 'tasksController';
-        $route->method = 'show_add';
+        $route->method = 'add_new';
         $routes[] = $route;
 
 
         $route = new route();
         $route->http_method = 'POST';
-        $route->action = 'save';
+        $route->action = 'create';
         $route->page = 'tasks';
         $route->controller = 'tasksController';
-        $route->method = 'save';
+        $route->method = 'create';
         $routes[] = $route;
 
 
@@ -206,6 +198,14 @@ class routes
         $route->page = 'accounts';
         $route->controller = 'accountsController';
         $route->method = 'store';
+        $routes[] = $route;
+
+        $route = new route();
+        $route->http_method = 'GET';
+        $route->action = 'logout';
+        $route->page = 'accounts';
+        $route->controller = 'accountsController';
+        $route->method = 'logout';
         $routes[] = $route;
 
 
