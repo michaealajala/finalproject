@@ -23,6 +23,7 @@
     Complete: <input type="text" name="isdone" value="<?php echo $data->isdone; ?>"><br>
     Create Date: <input type="text" name="createddate" value="<?php echo $data->createddate; ?>"><br>
     Last Updated: <input type="text" name="duedate" value="<?php echo $data->duedate; ?>"><br>
+    Email: <input type="text" name="owneremail" value="<?php echo $data->owneremail; ?>"><br>
 
     <input type="submit" value="Submit form">
 </form>
