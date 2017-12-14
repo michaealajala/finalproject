@@ -17,22 +17,26 @@
 
 <body>
 
-<!-- <form action="index.php?page=tasks&action=show_add" method="post" id="add">
-    <button type="submit" form="form1" value="create">Add New</button>
-</form> -->
-
-<!-- <button type="submit" formaction="index.php?page=tasks&action=all">Add</button>
- -->
-<a href="index.php?page=tasks&action=show_add">Add New</a>
+<a href="index.php?page=tasks&action=create">Add New</a>
 
 
 <?php
 //this is how you print something
 
-print utility\htmlTable::genarateTableFromMultiArray($data);
+if ($data==false){
+
+    echo '<p> You do not have any accounts yet. Click on the link above to create tasks </p>';
+} else{
+
+    print utility\htmlTable::genarateTableFromMultiArray($data);
+}
 
 
 ?>
+
+<p></p><a href="index.php">Homepage</a></p>
+
+
 
 
 <script src="js/scripts.js"></script>
