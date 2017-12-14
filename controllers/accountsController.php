@@ -74,7 +74,9 @@ class accountsController extends http\controller
 
     public static function edit()
     {
-        $record = accounts::findOne($_REQUEST['id']);
+        session_start();
+        $userId= $_SESSION['userID'];
+        $record = accounts::findOne($userId);
 
         self::getTemplate('edit_account', $record);
 
@@ -90,7 +92,7 @@ class accountsController extends http\controller
         $user->birthday = $_POST['birthday'];
         $user->gender = $_POST['gender'];
         $user->save();
-        header("Location: index.php?page=accounts&action=all");
+        header("Location: index.php?page=tasks&action=all");
 
     }
 

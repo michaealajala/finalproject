@@ -8,7 +8,10 @@ class htmlTable
     public static function genarateTableFromMultiArray($array)
     {
 
-        $tableGen = '<table border="1"cellpadding="10">';
+        $tableGen = '<div class="panel panel-primary">
+                     <table border="1" class="table table-striped" cellpadding="10">
+                       <div class="panel-heading">Tasks</div>
+';
         $tableGen .= '<tr>';
         //this grabs the first element of the array so we can extract the field headings for the table
         $fieldHeadings = $array[0];
@@ -32,14 +35,15 @@ class htmlTable
             $tableGen .= '</tr>';
         }
 
-        $tableGen .= '</table>';
+        $tableGen .= '</table>
+                        </div>';
 
         return $tableGen;
     }
 
     public static function generateTableFromOneRecord($innerArray)
     {
-        $tableGen = '<table border="1" cellpadding="10"><tr>';
+        $tableGen = '<table border="1" class="table" cellpadding="10"><tr>';
 
         $tableGen .= '<tr>';
         foreach ($innerArray as $innerRow => $value) {
