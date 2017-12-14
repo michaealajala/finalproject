@@ -18,20 +18,22 @@
 <body>
 
 
-<h1>
     <?php
 
-    //this how to print some data;
-   // echo $data['site_name'];
+    session_start();
 
-    ?> </h1>
+    if(key_exists('userID', $_SESSION)){
 
-<!--h1><a href="index.php?page=accounts&action=all">Show All Accounts</a></h1>
-<h1><a href="index.php?page=tasks&action=all">Show All Tasks</a></h1-->
-<h1>Welcome</h1>
-<p>Sign in </p>
+        echo '<h1><a href="index.php?page=tasks&action=all">Show All Tasks</a></h1>';
+        echo '<p><a href="index.php?page=accounts&action=logout">Logout</a></p>';
 
-<form action="index.php?page=accounts&action=login" method="POST">
+    }
+
+    else{
+
+      echo ' <h1>Welcome</h1>
+              <p>Sign in </p>
+ <form action="index.php?page=accounts&action=login" method="POST">
 
     <div class="container">
         <label><b>Username</b></label>
@@ -45,7 +47,14 @@
 
 
 </form>
-<p>New to this page <a href="index.php?page=accounts&action=register">Create an account</a></p>
+<p>New to this page <a href="index.php?page=accounts&action=register">Create an account</a></p>';
+
+    }
+
+    ?>
+
+
+
 
 
 <script src="js/scripts.js"></script>
