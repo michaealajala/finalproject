@@ -20,16 +20,17 @@ class htmlTable
         //this gets the page being viewed so that the table routes requests to the correct controller
         $referingPage = $_REQUEST['page'];
         foreach ($fieldHeadings as $heading) {
-            $tableGen .= '<th>' . $heading . '</th>';
+            $tableGen .= '<th style="text-align:center">' . $heading . '</th>';
         }
         $tableGen .= '</tr>';
         foreach ($array as $record) {
             $tableGen .= '<tr>';
             foreach ($record as $key => $value) {
                 if ($key == 'id') {
-                    $tableGen .= '<td><a href="index.php?page=' . $referingPage . '&action=show&id=' . $value . '">View</a></td>';
+                    $tableGen .= '<td style="text-align:center"><a href="index.php?page=' . $referingPage . '&action=edit&id=' . $value . '" class="btn btn-primary">Edit</a>&nbsp;&nbsp;'.
+                    '<a href="index.php?page=' . $referingPage . '&action=delete&id=' . $value . ' " class="btn btn-danger">Delete</a>  </td>';
                 } else {
-                    $tableGen .= '<td>' . $value . '</td>';
+                    $tableGen .= '<td style="text-align:center">' . $value . '</td>';
                 }
             }
             $tableGen .= '</tr>';

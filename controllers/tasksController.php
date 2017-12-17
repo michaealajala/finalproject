@@ -16,8 +16,6 @@ class tasksController extends http\controller
         self::getTemplate('show_task', $record);
     }
 
-
-
     public static function add_new()
     {
         self::getTemplate('add_new');
@@ -37,14 +35,13 @@ class tasksController extends http\controller
        $todo = new todo();
         session_start();
 
-        date_default_timezone_set('America/Los_Angeles');
+        date_default_timezone_set('America/New_York');
         $todo->ownerid=$_SESSION['userID'];
-        $todo->createddate = date("Y/m/d") ;
-        $todo->duedate = $_POST['duedate'];
+        $todo->createddate = date("Y/m/d g:i:s");
+        $todo->updateddate =  date("Y/m/d h:i:s");
         $todo->message = $_POST['message'];
         $todo->isdone = $_POST['isdone'];
         $todo->owneremail= $_POST['owneremail'];
-        $todo->duedate= $_POST['duedate'];
         $todo->save();
         header("Location: index.php?page=tasks&action=all");
     }
@@ -52,7 +49,6 @@ class tasksController extends http\controller
     public static function edit()
     {
         $record = todos::findOne($_REQUEST['id']);
-
         self::getTemplate('edit_task', $record);
 
     }
@@ -61,9 +57,10 @@ class tasksController extends http\controller
     public static function store()
     {
 
+        date_default_timezone_set('America/New_York');
         $todos= todos::findOne( $_REQUEST['id']);
         $todos->createddate = $_POST['createddate'];
-        $todos->duedate = $_POST['duedate'];
+        $todos->updateddate = date("Y/m/d h:i:s");
         $todos->message = $_POST['message'];
         $todos->isdone = $_POST['isdone'];
         $todos->owneremail = $_POST['owneremail'];
@@ -74,9 +71,6 @@ class tasksController extends http\controller
 
     }
 
-
-    //this is the delete function.  You actually return the edit form and then there should be 2 forms on that.
-    //One form is the todo and the other is just for the delete button
     public static function delete()
     {
         $record = todos::findOne($_REQUEST['id']);

@@ -6,7 +6,7 @@ final class todo extends database\model
     public $owneremail;
     public $ownerid;
     public $createddate;
-    public $duedate;
+    public $updateddate;
     public $message;
     public $isdone;
     protected static $modelName = 'todo';
