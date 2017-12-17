@@ -2,18 +2,18 @@
 include 'bootstrap_header.php';
 ?>
 
-<form action="index.php?page=tasks&action=store&id=<?php echo $data->id; ?>" method="post">
+<form action="index.php?page=tasks&action=edit&id=<?php echo $data->id; ?>" method="post">
 
     <center>
     <div class="input-group">
 
-    Title: <input type="text" class="form-control" name="message" value="<?php echo $data->message; ?>"><br>
-    Complete: <input type="text" class="form-control" name="isdone" value="<?php echo $data->isdone; ?>"><br>
-    Create Date: <input type="text" class="form-control" name="createddate" value="<?php echo $data->createddate; ?>"><br>
-    Last Updated: <input type="text" class="form-control" name="duedate" value="<?php echo $data->duedate; ?>"><br>
-    Email: <input type="text" class="form-control" name="owneremail" value="<?php echo $data->owneremail; ?>"><br>
+    Title: <input type="text" class="form-control" name="message" value="<?php echo $data->message; ?>" readonly><br>
+    Complete: <input type="text" class="form-control" name="isdone" value="<?php echo $data->isdone; ?>" readonly> <br>
+    Create Date: <input type="text" class="form-control" name="createddate" value="<?php echo $data->createddate; ?>" readonly><br>
+    Last Updated: <input type="text" class="form-control" name="duedate" value="<?php echo $data->duedate; ?>" readonly><br>
+    Email: <input type="text" class="form-control" name="owneremail" value="<?php echo $data->owneremail; ?>" readonly><br>
 
-    <input type="submit" value="Submit form">
+    <input type="submit" value="Edit">
 </form>
 
 <form action="index.php?page=tasks&action=delete&id=<?php echo $data->id; ?> " method="post" id="form1">
