@@ -45,6 +45,7 @@ class routes
         $route->page = 'accounts';
         $route->controller = 'accountsController';
         $route->method = 'store';
+        $route->method = 'store';
         $routes[] = $route;
 
 //   login routes
@@ -105,6 +106,16 @@ class routes
         $route->controller = 'tasksController';
         $route->method = 'create';
         $routes[] = $route;
+
+        $route = new route();
+        $route->http_method = 'POST';
+        $route->action = 'edit';
+        $route->page = 'tasks';
+        $route->controller = 'tasksController';
+        $route->method = 'edit';
+        $routes[] = $route;
+
+
 
 
 // All accounts routes
@@ -178,13 +189,13 @@ class routes
         $route->method = 'logout';
         $routes[] = $route;
 
-        $route = new route();
-        $route->http_method = 'GET';
-        $route->action = 'edit';
-        $route->page = 'accounts';
-        $route->controller = 'accountsController';
-        $route->method = 'edit';
-        $routes[] = $route;
+//        $route = new route();
+//        $route->http_method = 'GET';
+//        $route->action = 'edit';
+//        $route->page = 'accounts';
+//        $route->controller = 'accountsController';
+//        $route->method = 'edit';
+//        $routes[] = $route;
 
 
 
