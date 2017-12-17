@@ -16,6 +16,8 @@ class tasksController extends http\controller
         self::getTemplate('show_task', $record);
     }
 
+
+
     public static function add_new()
     {
         self::getTemplate('add_new');
