@@ -58,6 +58,27 @@ final class account extends \database\model
             $valid = FALSE;
             echo 'nothing in email';
         }
+        
+        if($this->fname == '') {
+            $valid = FALSE;
+            echo 'please enter a valid first name';
+        }
+        
+        if($this->lname == '') {
+            $valid = FALSE;
+            echo 'please enter a valid last name';
+        }
+        if($this->email == '') {
+            $valid = FALSE;
+            echo 'please enter a valid email';
+        }
+        
+        if(strlen($this->fname) <6) {
+            $valid = FALSE;
+            echo 'please enter your first name';
+        }
+        
+        
 
 
         return $valid;
