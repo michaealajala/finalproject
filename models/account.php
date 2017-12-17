@@ -73,7 +73,7 @@ final class account extends \database\model
             echo 'please enter a valid email';
         }
         
-        if(strlen($this->fname <6)) {
+        if(strlen($this->fname) <6) {
             $valid = FALSE;
             echo 'please enter your first name';
         }
