@@ -59,6 +59,15 @@ class routes
         $routes[] = $route;
 
 // task routes
+
+        $route = new route();
+        $route->http_method = 'GET';
+        $route->action = 'show';
+        $route->page = 'tasks';
+        $route->controller = 'tasksController';
+        $route->method = 'show';
+        $routes[] = $route;
+
         $route = new route();
         $route->http_method = 'GET';
         $route->action = 'all';
@@ -108,7 +117,7 @@ class routes
         $routes[] = $route;
 
         $route = new route();
-        $route->http_method = 'POST';
+        $route->http_method = 'GET';
         $route->action = 'edit';
         $route->page = 'tasks';
         $route->controller = 'tasksController';
@@ -137,14 +146,12 @@ class routes
         $routes[] = $route;
 
         $route = new route();
-        $route->http_method = 'POST';
+        $route->http_method = 'GET';
         $route->action = 'delete';
         $route->page = 'tasks';
         $route->controller = 'tasksController';
         $route->method = 'delete';
         $routes[] = $route;
-
-
 
         $route= new route();
         $route->http_method = 'POST';
@@ -189,13 +196,7 @@ class routes
         $route->method = 'logout';
         $routes[] = $route;
 
-//        $route = new route();
-//        $route->http_method = 'GET';
-//        $route->action = 'edit';
-//        $route->page = 'accounts';
-//        $route->controller = 'accountsController';
-//        $route->method = 'edit';
-//        $routes[] = $route;
+
 
 
 
