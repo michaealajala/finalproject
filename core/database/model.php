@@ -9,9 +9,12 @@ abstract class model
     public function save()
     {
 
-        if($this->validate() == FALSE) {
-            echo 'failed validation';
+        if($this->validate() == FALSE || $this->validate2()== FALSE) {
+
+            echo '<br/>failed validation';
             exit;
+
+
         }
 
 
@@ -62,6 +65,11 @@ abstract class model
     }
 
     public function validate() {
+
+        return TRUE;
+    }
+
+    public function validate2() {
 
         return TRUE;
     }

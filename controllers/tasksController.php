@@ -12,8 +12,9 @@ class tasksController extends http\controller
 {
     public static function show()
     {
+
         $record = todos::findOne($_REQUEST['id']);
-        self::getTemplate('show_task', $record);
+        self::getTemplate('edit_task', $record);
     }
 
     public static function add_new()
@@ -44,6 +45,7 @@ class tasksController extends http\controller
         $todo->owneremail= $_POST['owneremail'];
         $todo->save();
         header("Location: index.php?page=tasks&action=all");
+
     }
 
     public static function edit()
@@ -64,7 +66,6 @@ class tasksController extends http\controller
         $todos->message = $_POST['message'];
         $todos->isdone = $_POST['isdone'];
         $todos->owneremail = $_POST['owneremail'];
-
         $todos->save();
         header("Location: index.php?page=tasks&action=all");
 
