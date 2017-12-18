@@ -79,7 +79,7 @@ class accountsController extends http\controller
         $user = accounts::findUserbyEmail($_REQUEST['email']);
 
         if ($user == FALSE) {
-            echo 'user not found';
+            echo 'Your profile does not exist in our record, click <a href="index.php&page=accounts&action=register">here</a> to create a profile';
         } else {
             if($user->checkPassword($_POST['password']) == TRUE) {
                 session_start();
