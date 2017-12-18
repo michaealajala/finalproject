@@ -38,14 +38,15 @@ class tasksController extends http\controller
 
         date_default_timezone_set('America/New_York');
         $todo->ownerid=$_SESSION['userID'];
-        $todo->createddate = date("Y/m/d g:i:s");
+        $todo->createddate = date("Y/m/d G:i:s");
+        //For some reason I couldn't get both time functions to work for me
+        //I had to revert to the 24 hour format for the created date
         $todo->updateddate =  date("Y/m/d h:i:s");
         $todo->message = $_POST['message'];
         $todo->isdone = $_POST['isdone'];
         $todo->owneremail= $_POST['owneremail'];
         $todo->save();
         header("Location: index.php?page=tasks&action=all");
-
     }
 
     public static function edit()
