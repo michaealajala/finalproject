@@ -26,7 +26,11 @@ final class todo extends database\model
         if ($this->message == '') {
             $valid = FALSE;
             echo 'nothing in message<br/>';
+        if ($this->id!=''){
             echo' <a href="index.php?page=tasks&action=edit&id='. $this->id .'">Back</a>';
+        }else{
+            ehco'<a href="index.php?page=tasks&action=edit>Back</a>';
+        }
         }
 
         if (! ($this->isdone==1 || $this->isdone==0)){
