@@ -50,32 +50,33 @@ final class account extends \database\model
     }
 
 
-    public function validate()
+    public function validate2()
     {
+
         $valid = TRUE;
-        echo 'myemail: ' . $this->email;
-        if($this->email == '') {
-            $valid = FALSE;
-            echo 'nothing in email';
-        }
-        
+
+        //Tried to redirect users back to the profile page but I kept facing issues with the registration page
+        //The registration page keeps coming up with an error message when I tried to redirect the user to the register page
+      // $register_page= '<a href="index.php?page=accounts&action=edit">Back</a>';
+
         if($this->fname == '') {
             $valid = FALSE;
-            echo 'please enter a valid first name';
+            echo 'please enter a valid first name<br/>';
+
         }
         
         if($this->lname == '') {
             $valid = FALSE;
-            echo 'please enter a valid last name';
+            echo 'please enter a valid last name<br/>';
         }
         if($this->email == '') {
             $valid = FALSE;
-            echo 'please enter a valid email';
+            echo 'please enter a valid email<br/>';
         }
         
-        if(strlen($this->fname) <6) {
+        if(strlen($this->password) <6 ) {
             $valid = FALSE;
-            echo 'please enter your first name';
+            echo 'please at least 6 characters for your password<br/>.$register_page';
         }
         
         
