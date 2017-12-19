@@ -49,38 +49,49 @@ final class account extends \database\model
 
     }
 
+    //created a redirect link for the user to click on when they encounter any validation
+
+    public function account_redirect(){
+
+        if ($this->id!=''){
+            echo' <a href="index.php?page=accounts&action=edit">Back</a> to my profile<br>';
+        }else{
+            echo '<a href="index.php?page=accounts&action=register" >Back</a> to Registration Page<br>';
+        }
+    }
+
 
     public function validate2()
     {
 
         $valid = TRUE;
 
-        //Tried to redirect users back to the profile page but I kept facing issues with the registration page
-        //The registration page keeps coming up with an error message when I tried to redirect the user to the register page
-      // $register_page= '<a href="index.php?page=accounts&action=edit">Back</a>';
-
         if($this->fname == '') {
             $valid = FALSE;
-            echo 'please enter a valid first name<br/>';
+            echo 'Please enter a valid first name<br/>';
+            $this->account_redirect();
 
         }
         
         if($this->lname == '') {
             $valid = FALSE;
-            echo 'please enter a valid last name<br/>';
+            echo 'Please enter a valid last name<br/>';
+            $this->account_redirect();
+
         }
         if($this->email == '') {
             $valid = FALSE;
-            echo 'please enter a valid email<br/>';
-        }
-        
-        if(strlen($this->password) <6 ) {
-            $valid = FALSE;
-            echo 'please at least 6 characters for your password<br/>.$register_page';
-        }
-        
-        
+            echo 'Please enter a valid email<br/>';
+            $this->account_redirect();
 
+        }
+        
+        if(strlen($this->password) < 6 ) {
+            $valid = FALSE;
+
+            echo 'Please at least 6 characters for your password<br/>';
+            $this->account_redirect();
+        }
 
         return $valid;
 

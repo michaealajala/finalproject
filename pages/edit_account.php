@@ -10,9 +10,9 @@ include 'bootstrap_header.php';
     <div class="input-group">
         First name: <input type="text" class="form-control" name="fname" value="<?php echo $data->fname; ?>"><br>
         Last name: <input type="text" class="form-control" name="lname" value="<?php echo $data->lname; ?>"><br>
-        Email: <input type="text" class="form-control" name="email" value="<?php echo $data->email; ?>"><br>
-        Phone: <input type="text" class="form-control" name="phone" value="<?php echo $data->phone; ?>"><br>
-        Birthday: <input type="text" class="form-control" name="birthday" value="<?php echo $data->birthday; ?>"><br>
+        Email: <input type="email" class="form-control" name="email" value="<?php echo $data->email; ?>"><br>
+        Phone: <input type="tel" minlength="10" class="form-control" name="phone" value="<?php echo $data->phone; ?>"><br>
+        Birthday: <input type="date" class="form-control" name="birthday" value="<?php echo $data->birthday; ?>"><br>
         Gender: <input type="text" class="form-control" name="gender" value="<?php echo $data->gender; ?>"><br>
     </div>
 
