@@ -17,7 +17,7 @@ include 'bootstrap_header.php';
     </form>
 
     <form action="index.php?page=tasks&action=delete&id=<?php echo $data->id; ?> " method="post" id="form1">
-        <br> <button type="submit" form="form1" value="delete">Delete</button>
+        <br> <button type="submit" form="form1" class="btn btn-danger" value="delete">Delete</button>
     </form>
     </div>
     <p><a href="index.php?page=tasks&action=all" >Back</a></p>
