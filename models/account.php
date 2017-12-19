@@ -35,9 +35,14 @@ final class account extends \database\model
 
     public function setPassword($password) {
 
-        $password = password_hash($password, PASSWORD_DEFAULT);
+        if (strlen($password) <6 ){
+            $this->password_validation();
 
+        }else {
 
+            $password = password_hash($password, PASSWORD_DEFAULT);
+
+        }
         return $password;
 
     }
@@ -60,6 +65,12 @@ final class account extends \database\model
         }
     }
 
+    public function password_validation(){
+
+        echo 'Please at least 6 characters for your password<br/>';
+        $this->account_redirect();
+    }
+
 
     public function validate2()
     {
@@ -79,17 +90,24 @@ final class account extends \database\model
             $this->account_redirect();
 
         }
+//        if((strlen($this->password)) < 6 ) {
+//            $valid = FALSE;
+//
+//            echo 'Please at least 6 characters for your password<br/>';
+//            $this->account_redirect();
+//        }
         if($this->email == '') {
             $valid = FALSE;
             echo 'Please enter a valid email<br/>';
             $this->account_redirect();
-
         }
         
-        if(strlen($this->password) < 6 ) {
+
+
+        if(!($this->gender=="Male"||$this->gender=="Female"||$this->gender=="Other")) {
             $valid = FALSE;
 
-            echo 'Please at least 6 characters for your password<br/>';
+            echo 'Please Enter Male, Female or Other<br/>';
             $this->account_redirect();
         }
 

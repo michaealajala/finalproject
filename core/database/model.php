@@ -11,7 +11,7 @@ abstract class model
 
         if($this->validate() == FALSE || $this->validate2()== FALSE) {
 
-            echo '<h3>Oops, an error as occurred!</h3>';
+            echo '<h3>Oops, an error has occurred!</h3>';
             exit;
         }
 

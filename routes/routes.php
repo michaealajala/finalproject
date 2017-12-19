@@ -193,9 +193,6 @@ class routes
         $route->method = 'save';
         $routes[] = $route;
 
-
-
-
         $route = new route();
         $route->http_method = 'GET';
         $route->action = 'logout';
