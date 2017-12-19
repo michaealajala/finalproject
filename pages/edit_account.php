@@ -16,7 +16,7 @@ include 'bootstrap_header.php';
         Gender: <input type="text" class="form-control" name="gender" value="<?php echo $data->gender; ?>"><br>
     </div>
 
-    <input type="submit" class="btn btn-default navbar-btn"  value="Submit form">
+    <input type="submit" class="btn btn-primary"  value="Submit form">
 </form>
 
 <p><a href="index.php?page=tasks&action=all">Back</a></p>

@@ -37,6 +37,7 @@ final class account extends \database\model
 
         if (strlen($password) <6 ){
             $this->password_validation();
+            exit;
 
         }else {
 

@@ -13,7 +13,7 @@ include 'bootstrap_header.php';
                 Last Updated: <input type="text" class="form-control" name="updateddate" value="<?php echo $data->updateddate; ?>" readonly><br>
                 Email: <input type="text" class="form-control" name="owneremail" value="<?php echo $data->owneremail; ?>"><br>
 
-                <input type="submit" value="Submit form">
+                <input type="submit" class="btn btn-primary" value="Submit form">
     </form>
 
     <form action="index.php?page=tasks&action=delete&id=<?php echo $data->id; ?> " method="post" id="form1">

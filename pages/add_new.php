@@ -9,7 +9,7 @@ include 'bootstrap_header.php';
             Complete: <input type="text" class="form-control" name="isdone" placeholder="Enter 0 or 1" ><br>
             Email: <input type="email" class="form-control" name="owneremail" placeholder="Enter Email" ><br>
 
-            <input type="submit" value="Submit form">
+            <input type="submit" class="btn btn-primary" value="Submit form">
         </div>
     </form>
 
