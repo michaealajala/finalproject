@@ -31,18 +31,21 @@ class tasksController extends http\controller
 
     }
 
+    /**
+     *
+     */
     public static function create()
     {
        $todo = new todo();
         session_start();
-
+//For some reason I couldn't get both time functions to work for me
+//I used the time variable to define the created date
+// I left updated date blank but once you edit the task updated date will show up
+        $todo->ownerid=$_SESSION['userID'];
         date_default_timezone_set('America/New_York');
         $time= date("Y/m/d h:i:s");
-        $todo->ownerid=$_SESSION['userID'];
         $todo->createddate = $time;
-        //For some reason I couldn't get both time functions to work for me
-        //I had to revert to the 24 hour format for the created date
-        $todo->updateddate =  $time;
+        $todo->updateddate =  NULL;
         $todo->message = $_POST['message'];
         $todo->isdone = $_POST['isdone'];
         $todo->owneremail= $_POST['owneremail'];
