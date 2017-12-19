@@ -3,7 +3,7 @@ include 'bootstrap_header.php';
 ?>
 
 <center>
-    <h3>Hi!  <?php echo $data->fname; ?></h3>
+    <h3 class="back_button">Hi!  <?php echo $data->fname; ?></h3>
 
     <form action="index.php?page=accounts&action=save&id=<?php echo $data->id; ?>" method="post">
 
