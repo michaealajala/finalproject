@@ -19,7 +19,7 @@ include 'bootstrap_header.php';
     <input type="submit" class="btn btn-primary"  value="Submit form">
 </form>
 
-<p><a href="index.php?page=tasks&action=all">Back</a></p>
+<p><a class="back_button" href="index.php?page=tasks&action=all">Back</a></p>
 
 </center>';
 

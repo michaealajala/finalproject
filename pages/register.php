@@ -14,7 +14,7 @@ include 'bootstrap_header.php';
     <input type="submit" class="btn btn-primary" value="Submit form">
 </form>
     </div>
-        <p ><a href="index.php">Back to the login page</a></p>
+        <p ><a class="back_button"href="index.php">Back to the login page</a></p>
     </center>
 
 

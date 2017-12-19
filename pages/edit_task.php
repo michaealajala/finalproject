@@ -20,7 +20,7 @@ include 'bootstrap_header.php';
         <br> <button type="submit" form="form1" class="btn btn-danger" value="delete">Delete</button>
     </form>
     </div>
-    <p><a href="index.php?page=tasks&action=all" >Back</a></p>
+    <p><a class="back_button" href="index.php?page=tasks&action=all" >Back</a></p>
     </center>
 <?php
 include 'bootstrap_footer.php';

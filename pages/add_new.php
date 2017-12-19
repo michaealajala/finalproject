@@ -13,7 +13,7 @@ include 'bootstrap_header.php';
         </div>
     </form>
 
-    <p><a href="index.php?page=tasks&action=all">Back</a></p>
+    <p><a class="back_button" href="index.php?page=tasks&action=all">Back</a></p>
 </center>
 <?php
 include 'bootstrap_footer.php';
