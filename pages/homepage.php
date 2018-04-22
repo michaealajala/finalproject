@@ -4,7 +4,7 @@ include 'bootstrap_header.php'
 
  <div class="container">
  <center>
- <h2 class="col-sm-offset-"><i>Welcome to Your Task Management Page</i><br></h2>
+ <h2 class="col-sm-offset-"><i>Welcome to GroupUp</i><br></h2>
 
      <p class="sub_section"><i>Please sign in to get started</i><br></p>
 
