@@ -46,7 +46,7 @@ class tasksController extends http\controller
         $time= date("Y/m/d h:i:s");
         $todo->createddate = $time;
         $todo->updateddate =  NULL;
-        $todo->message = $_POST['message'];
+        $todo->activities = $_POST['activities'];
         $todo->venues = $_POST['venues'];
         $todo->owneremail= $_POST['owneremail'];
         $todo->save();
@@ -68,7 +68,7 @@ class tasksController extends http\controller
         $todos= todos::findOne( $_REQUEST['actions']);
         $todos->createddate = $_POST['createddate'];
         $todos->updateddate = date("Y/m/d h:i:s");
-        $todos->message = $_POST['message'];
+        $todos->activities = $_POST['activities'];
         $todos->venues = $_POST['venues'];
         $todos->owneremail = $_POST['owneremail'];
         $todos->save();

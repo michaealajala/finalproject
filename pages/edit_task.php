@@ -7,11 +7,11 @@ include 'bootstrap_header.php';
 
             <div class="input-group">
 
-                Activity Name: <input type="text" class="form-control" name="message" value="<?php echo $data->message; ?>"><br>
-                Complete: <input type="text" class="form-control" name="isdone" value="<?php echo $data->venues; ?>"><br>
+                Activity Name: <input type="text" class="form-control" name="activities" value="<?php echo $data->activities; ?>"><br>
+                Venue: <input type="text" class="form-control" name="venues" value="<?php echo $data->venues; ?>"><br>
                 Create Date: <input type="text" class="form-control" name="createddate" value="<?php echo $data->createddate; ?>" readonly><br>
                 Last Updated: <input type="text" class="form-control" name="updateddate" value="<?php echo $data->updateddate; ?>" readonly><br>
-                Venue: <input type="text" class="form-control" name="owneremail" value="<?php echo $data->owneremail; ?>"><br>
+                Email: <input type="text" class="form-control" name="owneremail" value="<?php echo $data->owneremail; ?>"><br>
 
                 <input type="submit" class="btn btn-primary" value="Submit form">
     </form>
