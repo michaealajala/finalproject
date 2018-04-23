@@ -10,7 +10,7 @@ class htmlTable
 
         $tableGen = '<div class="panel panel-primary">
                      <table border="1" class="table table-striped" cellpadding="10">
-                       <div class="panel-heading">Tasks</div>
+                       <div class="panel-heading">Activities Created</div>
 ';
         $tableGen .= '<tr>';
         //this grabs the first element of the array so we can extract the field headings for the table
@@ -26,9 +26,9 @@ class htmlTable
         foreach ($array as $record) {
             $tableGen .= '<tr>';
             foreach ($record as $key => $value) {
-                if ($key == 'id') {
-                    $tableGen .= '<td style="text-align:center"><a href="index.php?page=' . $referingPage . '&action=edit&id=' . $value . '" class="btn btn-primary">Edit</a>&nbsp;&nbsp;'.
-                    '<a href="index.php?page=' . $referingPage . '&action=delete&id=' . $value . ' " class="btn btn-danger">Delete</a>  </td>';
+                if ($key == 'actions') {
+                    $tableGen .= '<td style="text-align:center"><a href="index.php?page=' . $referingPage . '&action=edit&actions=' . $value . '" class="btn btn-primary">Edit</a>&nbsp;&nbsp;'.
+                    '<a href="index.php?page=' . $referingPage . '&action=delete&actions=' . $value . ' " class="btn btn-danger">Delete</a>  </td>';
                 } else {
                     $tableGen .= '<td style="text-align:center">' . $value . '</td>';
                 }

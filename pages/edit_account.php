@@ -2,10 +2,10 @@
 include 'bootstrap_header.php';
 ?>
 
-<center>
+
     <h3 class="back_button">Hi!  <?php echo $data->fname; ?></h3>
 
-    <form action="index.php?page=accounts&action=save&id=<?php echo $data->id; ?>" method="post">
+    <form action="index.php?page=accounts&action=save&actions=<?php echo $data->actions; ?>" method="post">
 
     <div class="input-group">
         First name: <input type="text" class="form-control" name="fname" value="<?php echo $data->fname; ?>"><br>
@@ -21,7 +21,7 @@ include 'bootstrap_header.php';
 
 <p><a class="back_button" href="index.php?page=tasks&action=all">Back</a></p>
 
-</center>';
+
 
 <?php
 include 'bootstrap_footer.php'

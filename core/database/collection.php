@@ -46,12 +46,12 @@ abstract class collection
         return $recordsSet;
     }
 
-    static public function findOne($id)
+    static public function findOne($actions)
     {
         $tableName = get_called_class();
-        $sql = 'SELECT * FROM ' . $tableName . ' WHERE id = ?';
+        $sql = 'SELECT * FROM ' . $tableName . ' WHERE actions = ?';
         //grab the only record for find one and return as an object
-        $recordsSet = self::getResults($sql, $id);
+        $recordsSet = self::getResults($sql, $actions);
 
         if (is_null($recordsSet)) {
             return FALSE;

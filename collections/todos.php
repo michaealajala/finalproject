@@ -27,11 +27,11 @@ class todos extends database\collection
         }
     }
 
-    public static function findOne($id){
+    public static function findOne($actions){
 
         $tableName = get_called_class();
-        $sql = 'SELECT * FROM ' . $tableName . ' WHERE id = ?';
-        $recordsSet = self::getResults($sql, $id);
+        $sql = 'SELECT * FROM ' . $tableName . ' WHERE actions = ?';
+        $recordsSet = self::getResults($sql, $actions);
 
           if (is_null($recordsSet)) {
             return FALSE;

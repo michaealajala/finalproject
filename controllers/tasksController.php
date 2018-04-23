@@ -13,7 +13,7 @@ class tasksController extends http\controller
     public static function show()
     {
 
-        $record = todos::findOne($_REQUEST['id']);
+        $record = todos::findOne($_REQUEST['actions']);
         self::getTemplate('edit_task', $record);
     }
 
@@ -47,7 +47,7 @@ class tasksController extends http\controller
         $todo->createddate = $time;
         $todo->updateddate =  NULL;
         $todo->message = $_POST['message'];
-        $todo->isdone = $_POST['isdone'];
+        $todo->venues = $_POST['venues'];
         $todo->owneremail= $_POST['owneremail'];
         $todo->save();
         header("Location: index.php?page=tasks&action=all");
@@ -55,7 +55,7 @@ class tasksController extends http\controller
 
     public static function edit()
     {
-        $record = todos::findOne($_REQUEST['id']);
+        $record = todos::findOne($_REQUEST['actions']);
         self::getTemplate('edit_task', $record);
 
     }
@@ -65,11 +65,11 @@ class tasksController extends http\controller
     {
 
         date_default_timezone_set('America/New_York');
-        $todos= todos::findOne( $_REQUEST['id']);
+        $todos= todos::findOne( $_REQUEST['actions']);
         $todos->createddate = $_POST['createddate'];
         $todos->updateddate = date("Y/m/d h:i:s");
         $todos->message = $_POST['message'];
-        $todos->isdone = $_POST['isdone'];
+        $todos->venues = $_POST['venues'];
         $todos->owneremail = $_POST['owneremail'];
         $todos->save();
         header("Location: index.php?page=tasks&action=all");
@@ -79,7 +79,7 @@ class tasksController extends http\controller
 
     public static function delete()
     {
-        $record = todos::findOne($_REQUEST['id']);
+        $record = todos::findOne($_REQUEST['actions']);
         $record->delete();
         header("Location: index.php?page=tasks&action=all");
 

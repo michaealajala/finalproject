@@ -4,10 +4,15 @@ body{
 }
 
 form,h3,h1,h2,.container{
-    color:white;
+    color:black;
 
 }
 
+
+h1,h2,p{
+
+    color:black;
+}
 .sub_section{
 
     font-size: 15px;

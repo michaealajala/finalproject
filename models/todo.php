@@ -2,13 +2,13 @@
 
 final class todo extends database\model
 {
-    public $id;
+    public $actions;
     public $owneremail;
     public $ownerid;
     public $createddate;
     public $updateddate;
     public $message;
-    public $isdone;
+    public $venues;
     protected static $modelName = 'todo';
 
     public static function getTablename()
@@ -20,8 +20,8 @@ final class todo extends database\model
 
     public function task_redirect(){
 
-        if ($this->id!=''){
-            echo' <a href="index.php?page=tasks&action=edit&id='. $this->id .'">Back</a><br>';
+        if ($this->actions!=''){
+            echo' <a href="index.php?page=tasks&action=edit&id='. $this->actions .'">Back</a><br>';
         }else{
             echo '<a href="index.php?page=tasks&action=create" >Back to the list</a><br>';
         }
@@ -38,11 +38,11 @@ final class todo extends database\model
 
         }
 
-        if (! ($this->isdone==1 || $this->isdone==0)){
+      /*if (! ($this->isdone==1 || $this->isdone==0)){
         $valid = FALSE;
              echo 'Enter 0 or 1<br/>';
              $this->task_redirect();
-        }
+        }*/
 
        return $valid;
 
